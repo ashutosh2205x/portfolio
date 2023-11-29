@@ -51,7 +51,7 @@ const Projects = () => {
             data.map(async (g) => {
               return {
                 ...g,
-                tags: Object.keys(await commonAPIWrapper(g.languages_url)),
+                // tags: Object.keys(await commonAPIWrapper(g.languages_url)),
               };
             });
             console.log("data new", data);
