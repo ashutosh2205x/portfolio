@@ -65,15 +65,37 @@ const Timeline = () => {
   }, []);
 
   return (
-    <Section id="about">
+    <Section id="about" style={{ paddingLeft: 10 }}>
       <SectionTitle>About Me</SectionTitle>
-      <SectionText>
-        Hi, I'm Ashutosh Bharti 28. I am a Full-stack developer from Noida,
-        India. I enjoy building everything from small business sites to rich
-        interactive web apps and mobile apps. My expertise is in the area of
-        backend, mobile and web. With every line of code, I strive to make the
-        system the beautiful and efficient.
-        
+      <SectionText style={{ color: "white" }}>
+        I am a Full-stack developer from Noida, India. I enjoy building
+        everything from small business sites to rich interactive web apps and
+        mobile apps.
+        <ul>
+          <li style={{ listStyleType: "disc" }}>Avid Full Stack Developer.</li>
+          <li style={{ listStyleType: "disc" }}>
+            Experienced with frontend technologies - ReactJS, VueJS, NextJS,
+            Angular7, Swift5 and ReactNative.
+          </li>
+          <li style={{ listStyleType: "disc" }}>
+            Experienced with backend technologies NodeJS, MongoDB, MySQL, Java.
+          </li>
+          <li style={{ listStyleType: "disc" }}>
+            Experienced with automation testing tools - Cypress, JEST framework.
+          </li>
+          <li style={{ listStyleType: "disc" }}>
+            Experienced with implementation/ integration of third-party APIs /
+            SDKs, and payment gateways.
+          </li>
+          <li style={{ listStyleType: "disc" }}>
+            Experienced with deployment tools/platforms - Heroku, DigitalOcean,
+            Appstore, Google Play Store, Firebase and AWS.
+          </li>
+          <li style={{ listStyleType: "disc" }}>
+            Keen learner of JavaScript, TypeScript, System Design, OpenCV and
+            ML.
+          </li>
+        </ul>
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

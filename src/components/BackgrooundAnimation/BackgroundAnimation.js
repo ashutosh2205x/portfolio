@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BackgroundAnimation = () => (
+const BackgroundAnimation = ({children}) => (
   <div>
     <svg
       className="BgAnimation__svg"
@@ -359,6 +359,7 @@ const BackgroundAnimation = () => (
         </linearGradient>
       </defs>
     </svg>
+    {children}
   </div>
 );
 
