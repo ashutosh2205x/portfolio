@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillMediumCircle } from "react-icons/ai";
 import { DiCssdeck } from "react-icons/di";
 
 import {
@@ -39,13 +39,25 @@ const Header = () => (
       </li>
     </Div2>
     <Div3>
-      <SocialIcons href="https://github.com/ashutosh2205x" target='_blank'>
+      <SocialIcons href="https://github.com/ashutosh2205x" target="_blank">
         <AiFillGithub size="3rem" />
       </SocialIcons>
-      <SocialIcons href="https://linkedin.com/in/ashutosh-kumar-bharti-947a36121/" target='_blank'>
+      <SocialIcons
+        href="https://linkedin.com/in/ashutosh-kumar-bharti-947a36121/"
+        target="_blank"
+      >
         <AiFillLinkedin size="3rem" />
       </SocialIcons>
-      <SocialIcons href="https://www.instagram.com/ashutosh_2205/" target='_blank'>
+      <SocialIcons
+        href="https://medium.com/@ashutosh-bharti5247"
+        target="_blank"
+      >
+        <AiFillMediumCircle size="3rem" />
+      </SocialIcons>
+      <SocialIcons
+        href="https://www.instagram.com/ashutosh_2205/"
+        target="_blank"
+      >
         <AiFillInstagram size="3rem" />
       </SocialIcons>
     </Div3>

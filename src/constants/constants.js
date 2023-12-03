@@ -63,3 +63,6 @@ export const TimeLineData = [
     text: "Currently working as working as full stack developer for the organisation to deliver the best. Working as full stack for projects related to - ICAR, CPCB, FAA.",
   },
 ];
+
+
+export const git_url = "https://api.github.com/users/ashutosh2205x/repos";

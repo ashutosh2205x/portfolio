@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .plan-swiper-container {
   position: relative;
   display: flex;
@@ -328,4 +332,8 @@
 
 .fs-36 {
   font-size: 36px;
+}
+
+.listing {
+  list-style-type: disc !important;
 }

@@ -26,6 +26,8 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Div1, Div2 } from "../Header/HeaderStyles";
+import Link from "next/link";
+import { git_url } from "../../constants/constants";
 const Projects = () => {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -35,7 +37,6 @@ const Projects = () => {
   };
 
   const [projects, loadUpProjects] = useState([]);
-  const git_url = "https://api.github.com/users/ashutosh2205x/repos";
 
   useEffect(() => {
     getProjectList();
@@ -48,12 +49,16 @@ const Projects = () => {
         .then((data) => {
           console.log("git repos", data);
           if (Array.isArray(data)) {
-            data.map(async (g) => {
-              return {
-                ...g,
-                // tags: Object.keys(await commonAPIWrapper(g.languages_url)),
-              };
-            });
+            data
+              .sort((a, b) => {
+                return a.name - b.name;
+              })
+              .map(async (g) => {
+                return {
+                  ...g,
+                  // tags: Object.keys(await commonAPIWrapper(g.languages_url)),
+                };
+              });
             console.log("data new", data);
           }
           console.log("data new2", data);
@@ -158,14 +163,9 @@ const Projects = () => {
             })}
         </Swiper>
       </Div1>
-
-      <Button
-        onClick={() => {
-          window.open("https://silly-wing-8ea493.netlify.app/", "_blank");
-        }}
-      >
-        Show All Projects
-      </Button>
+      <Link href="/projects">
+        <Button>Show All Projects</Button>
+      </Link>
     </Section>
   );
 };
