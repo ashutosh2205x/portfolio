@@ -18,6 +18,7 @@ import {
   SectionTitle,
 } from "../../styles/GlobalComponents";
 import { TimeLineData } from "../../constants/constants";
+import { ListParagraph } from "../Technologies/TechnologiesStyles";
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
@@ -67,7 +68,7 @@ const Timeline = () => {
   return (
     <Section id="about" style={{ paddingLeft: 10 }}>
       <SectionTitle>About Me</SectionTitle>
-      <SectionText style={{ color: "white" }}>
+      <ListParagraph style={{ paddingBlock: 20 }}>
         I am a Full-stack developer from Noida, India. I enjoy building
         everything from small business sites to rich interactive web apps and
         mobile apps.
@@ -96,7 +97,7 @@ const Timeline = () => {
             ML.
           </li>
         </ul>
-      </SectionText>
+      </ListParagraph>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {TimeLineData.map((item, index) => (
