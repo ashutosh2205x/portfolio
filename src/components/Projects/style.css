@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .plan-swiper-container {
   position: relative;
   display: flex;
@@ -59,6 +60,14 @@
   display: flex;
   justify-content: center;
 }
+.swiper-slide {
+  opacity: 0!important;
+}
+
+.swiper-slide-active {
+  opacity: 1!important;
+}
+
 
 .plan-wrapper {
   display: flex;

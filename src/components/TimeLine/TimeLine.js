@@ -65,7 +65,7 @@ const Timeline = () => {
   }, []);
 
   return (
-    <Section id="about">
+    <Section id="about" style={{ paddingLeft: 10 }}>
       <SectionTitle>About Me</SectionTitle>
       <SectionText style={{ color: "white" }}>
         I am a Full-stack developer from Noida, India. I enjoy building

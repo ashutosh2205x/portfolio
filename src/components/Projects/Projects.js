@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import {
+  Section,
+  SectionDivider,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import {
   BlogCard,
   CardInfo,
   ExternalLinks,
@@ -13,11 +18,6 @@ import {
   UtilityList,
   Img,
 } from "./ProjectsStyles";
-import {
-  Section,
-  SectionDivider,
-  SectionTitle,
-} from "../../styles/GlobalComponents";
 // import { projects } from "../../constants/constants";
 import Button from "../../styles/GlobalComponents/Button";
 import "swiper/css";
@@ -28,6 +28,17 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Div1, Div2 } from "../Header/HeaderStyles";
 import Link from "next/link";
 import { git_url } from "../../constants/constants";
+
+import {
+  Button as Button2,
+  Card,
+  CardBody,
+  CardImg,
+  CardTitle,
+  CardText,
+} from "reactstrap";
+import styled from "styled-components";
+
 const Projects = () => {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -41,6 +52,10 @@ const Projects = () => {
   useEffect(() => {
     getProjectList();
   }, []);
+
+  const Pad = styled.text`
+    padding: 1rem;
+  `;
 
   async function getProjectList() {
     try {
@@ -87,13 +102,14 @@ const Projects = () => {
       <SectionTitle main>Projects</SectionTitle>
       <Div1>
         <Swiper
-          style={{}}
-          spaceBetween={1}
+          spaceBetween={10}
           centeredSlides={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
+          slidesPerView={"auto"}
+          loop
+          // autoplay={{
+          //   delay: 5000,
+          //   disableOnInteraction: false,
+          // }}
           pagination={{
             clickable: false,
           }}
@@ -103,62 +119,91 @@ const Projects = () => {
           {projects.length > 0 &&
             projects.map((p, i) => {
               return (
-                <Div1 style={{ width: "100%" }}>
-                  <SwiperSlide
-                    key={`slide-${i}`}
-                    virtualIndex={i}
-                    style={{
-                      alignItems: "center",
-                      justifyItems: "center",
-                      width: "1040px",
-                      marginRight: "0px",
-                      display: "grid",
-                    }}
-                  >
-                    <BlogCard key={i}>
-                      {/* <Img src={p.image} /> */}
-                      <TitleContent>
-                        <HeaderThree
-                          title
-                          style={{ paddingLeft: 10, paddingRight: 10 }}
-                        >
-                          {p.name}
-                        </HeaderThree>
-                      </TitleContent>
-                      <CardInfo
-                        className="card-info"
-                        style={{ textAlign: "center" }}
+                <SwiperSlide
+                  key={`slide-${i}`}
+                  virtualIndex={i}
+                  style={{
+                    alignItems: "center",
+                    justifyItems: "center",
+                    // width: "1040px",
+                    marginRight: "0px",
+                    display: "grid",
+                  }}
+                >
+                  <Card>
+                    {/* <CardImg
+                      alt="..."
+                      src={{ url: "https://picsum.photos/200/300" }}
+                      top
+                    ></CardImg> */}
+                    <CardBody>
+                      <Pad>
+                        <CardTitle className="font-bold">{p.name}</CardTitle>
+                      </Pad>
+                      <CardText>{p.description}</CardText>
+                    </CardBody>
+                    <Pad>
+                      <TitleContent
+                        style={{
+                          fontSize: 20,
+                          color: "orangered",
+                          borderBottomColor: "orangered",
+                          borderBottomWidth: 1,
+                          paddingBottom: 0,
+                        }}
                       >
-                        {p.description}
-                      </CardInfo>
-                      <div>
-                        <Hr />
-                        <TitleContent
-                          style={{
-                            fontSize: 20,
-                            color: "orangered",
-                            borderBottomColor: "orangered",
-                            borderBottomWidth: 1,
-                          }}
-                        >
-                          Stack
-                        </TitleContent>
-                        <Hr />
-                        <TagList>
-                          {p.topics.map((t, i) => {
-                            return <Tag key={i}>{t},&nbsp;</Tag>;
-                          })}
-                        </TagList>{" "}
-                      </div>
-                      <UtilityList>
-                        <ExternalLinks href={p.html_url} target="_blank">
-                          Code
-                        </ExternalLinks>
-                        {/* <ExternalLinks href={p.source}>Source</ExternalLinks> */}
-                      </UtilityList>
-                    </BlogCard>
-                  </SwiperSlide>
-                </Div1>
+                        Stack
+                      </TitleContent>
+                    </Pad>
+                    <Hr />
+                    <TagList>
+                      {p.topics.map((t, i) => {
+                        return <Tag key={i}>{t},&nbsp;</Tag>;
+                      })}
+                    </TagList>{" "}
+                  </Card>
+
+                  {/* <BlogCard key={i}>
+                    <Img src={p.image} />
+                    <TitleContent>
+                      <HeaderThree
+                        title
+                      >
+                        {p.name}
+                      </HeaderThree>
+                    </TitleContent>
+                    <CardInfo
+                      className="card-info"
+                    >
+                      {p.description}
+                    </CardInfo>
+                    <div>
+                      <Hr />
+                      <TitleContent
+                        style={{
+                          fontSize: 20,
+                          color: "orangered",
+                          borderBottomColor: "orangered",
+                          borderBottomWidth: 1,
+                        }}
+                      >
+                        Stack
+                      </TitleContent>
+                      <Hr />
+                      <TagList>
+                        {p.topics.map((t, i) => {
+                          return <Tag key={i}>{t},&nbsp;</Tag>;
+                        })}
+                      </TagList>{" "}
+                    </div>
+                    <UtilityList>
+                      <ExternalLinks href={p.html_url} target="_blank">
+                        Code
+                      </ExternalLinks>
+                       <ExternalLinks href={p.source}>Source</ExternalLinks> 
+                    </UtilityList>
+                  </BlogCard> */}
+                </SwiperSlide>
               );
             })}
         </Swiper>

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Layout } from "../layout/Layout";
 import { Section, SectionText } from "../styles/GlobalComponents";
-import Hero from "../components/Hero/Hero";
-import BgAnimation from "../components/BackgrooundAnimation/BackgroundAnimation";
-import { Div1, Div2 } from "../components/Header/HeaderStyles";
 import {
   BlogCard,
   CardInfo,
