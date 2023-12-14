@@ -38,6 +38,10 @@ import {
   CardText,
 } from "reactstrap";
 import styled from "styled-components";
+import { useSpring, animated } from "react-spring";
+import Carousel from "../Carousel/Carousel";
+import { project_temp } from "./project.data";
+import { ResponsiveCard } from "./ResponsiveCard";
 
 const Projects = () => {
   const progressCircle = useRef(null);
@@ -47,10 +51,28 @@ const Projects = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  const [projects, loadUpProjects] = useState([]);
+  const [projects, loadUpProjects] = useState(project_temp);
+  const [hovered, setHovered] = useState(false);
+  const items = [
+    {
+      imageUrl: "https://via.placeholder.com/600x300",
+      title: "Slide 1",
+      description: "Description for Slide 1",
+    },
+    {
+      imageUrl: "https://via.placeholder.com/600x300",
+      title: "Slide 2",
+      description: "Description for Slide 2",
+    },
+    // Add more items as needed
+  ];
+
+  const animationProps = useSpring({
+    transform: hovered ? "scale(1.2)" : "scale(1)",
+  });
 
   useEffect(() => {
-    getProjectList();
+    // getProjectList();
   }, []);
 
   const Pad = styled.text`
@@ -59,7 +81,7 @@ const Projects = () => {
 
   async function getProjectList() {
     try {
-      fetch(git_url)
+      await fetch(git_url)
         .then((res) => res.json())
         .then((data) => {
           console.log("git repos", data);
@@ -100,23 +122,20 @@ const Projects = () => {
     <Section nopadding id="projects">
       <SectionDivider />
       <SectionTitle main>Projects</SectionTitle>
+
       <Div1>
         <Swiper
           spaceBetween={10}
           centeredSlides={true}
           slidesPerView={"auto"}
           loop
-          // autoplay={{
-          //   delay: 5000,
-          //   disableOnInteraction: false,
-          // }}
           pagination={{
             clickable: false,
           }}
           navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
         >
-          {projects.length > 0 &&
+          {!!projects.length &&
             projects.map((p, i) => {
               return (
                 <SwiperSlide
@@ -125,17 +144,12 @@ const Projects = () => {
                   style={{
                     alignItems: "center",
                     justifyItems: "center",
-                    // width: "1040px",
                     marginRight: "0px",
                     display: "grid",
                   }}
                 >
-                  <Card>
-                    {/* <CardImg
-                      alt="..."
-                      src={{ url: "https://picsum.photos/200/300" }}
-                      top
-                    ></CardImg> */}
+                  <ResponsiveCard props={p} />
+                  {/* <Card>
                     <CardBody>
                       <Pad>
                         <CardTitle className="font-bold">{p.name}</CardTitle>
@@ -161,7 +175,7 @@ const Projects = () => {
                         return <Tag key={i}>{t},&nbsp;</Tag>;
                       })}
                     </TagList>{" "}
-                  </Card>
+                  </Card> */}
 
                   {/* <BlogCard key={i}>
                     <Img src={p.image} />
@@ -208,9 +222,9 @@ const Projects = () => {
             })}
         </Swiper>
       </Div1>
-      <Link href="/projects">
+      {/* <Link href="/projects">
         <Button>Show All Projects</Button>
-      </Link>
+      </Link> */}
     </Section>
   );
 };

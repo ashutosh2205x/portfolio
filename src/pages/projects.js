@@ -34,7 +34,7 @@ export default function Projects() {
   const [projects, loadUpProjects] = useState([]);
 
   useEffect(() => {
-    getProjectList();
+    // getProjectList();
   }, []);
 
   async function getProjectList() {
