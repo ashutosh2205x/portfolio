@@ -59,7 +59,7 @@ export const ResponsiveCard = ({ props }) => {
 
   function handleClick(link) {
     console.log(link);
-    window.open(link, "_blank");
+    window.open(Object.values(link), "_blank");
   }
   return (
     <Card className={classes.root}>
@@ -135,7 +135,7 @@ export const ResponsiveCard = ({ props }) => {
                 return (
                   <Chip
                     className={classes.chipCustom}
-                    label={`Link${i + 1}`}
+                    label={Object.keys(s)}
                     variant="outlined"
                     color="primary"
                     onClick={() => handleClick(s)}

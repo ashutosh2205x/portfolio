@@ -14,6 +14,10 @@ import {
 } from "../components/Projects/ProjectsStyles";
 import { git_url } from "../constants/constants";
 import styled from "styled-components";
+import { ResponsiveCard } from "../components/Projects/ResponsiveCard";
+import { Grid, Stack } from "@mui/material";
+import { project_temp } from "../components/Projects/project.data";
+import { Div1 } from "../components/Header/HeaderStyles";
 
 const Container = styled.div`
   gap:10px
@@ -31,32 +35,11 @@ const Overlay = styled.div`
 `;
 
 export default function Projects() {
-  const [projects, loadUpProjects] = useState([]);
+  const [projects, loadUpProjects] = useState(project_temp);
 
   useEffect(() => {
-    // getProjectList();
+    console.log("project", projects);
   }, []);
-
-  async function getProjectList() {
-    try {
-      fetch(git_url)
-        .then((res) => res.json())
-        .then((data) => {
-          if (Array.isArray(data)) {
-            data.map(async (g) => {
-              return {
-                ...g,
-                // tags: Object.keys(await commonAPIWrapper(g.languages_url)),
-              };
-            });
-          }
-          console.log("data new2", data);
-          loadUpProjects(data);
-        });
-    } catch (error) {
-      console.log("error", error);
-    }
-  }
 
   return (
     <Layout>
@@ -69,60 +52,20 @@ export default function Projects() {
             borderBottom: "1px solid",
             color: "white",
           }}
-        >
-          Listing few of my github projects
-        </SectionText>
-        <Container>
-          {projects.length > 0 &&
-            projects.map((p, i) => {
-              return (
-                <Item key={Math.random().toFixed(10)}>
-                  <BlogCard key={i}>
-                    {/* <Img src={p.image} /> */}
-                    <TitleContent>
-                      <HeaderThree
-                        title
-                        style={{ paddingLeft: 10, paddingRight: 10 }}
-                      >
-                        {p.name}
-                      </HeaderThree>
-                    </TitleContent>
-                    <CardInfo
-                      className="card-info"
-                      style={{ textAlign: "center" }}
-                    >
-                      {p.description}
-                    </CardInfo>
-                    <div>
-                      <Hr />
-                      <TitleContent
-                        style={{
-                          fontSize: 20,
-                          color: "orangered",
-                          borderBottomColor: "orangered",
-                          borderBottomWidth: 1,
-                        }}
-                      >
-                        Stack
-                      </TitleContent>
-                      <Hr />
-                      <TagList>
-                        {p.topics.map((t, i) => {
-                          return <Tag key={i}>{t},&nbsp;</Tag>;
-                        })}
-                      </TagList>{" "}
-                    </div>
-                    <UtilityList>
-                      <ExternalLinks href={p.html_url} target="_blank">
-                        Code
-                      </ExternalLinks>
-                      {/* <ExternalLinks href={p.source}>Source</ExternalLinks> */}
-                    </UtilityList>
-                  </BlogCard>
-                </Item>
-              );
-            })}
-        </Container>
+        ></SectionText>
+
+        <Div1>
+          <Grid container spacing={3}>
+            {!!projects.length &&
+              projects.map((p, i) => {
+                return (
+                  <Grid item xs={12} sm={12} md={6} xl={6} lg={6}>
+                    <ResponsiveCard props={p} />
+                  </Grid>
+                );
+              })}
+          </Grid>
+        </Div1>
       </Section>
     </Layout>
   );

@@ -51,21 +51,9 @@ const Projects = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  const [projects, loadUpProjects] = useState(project_temp);
   const [hovered, setHovered] = useState(false);
-  const items = [
-    {
-      imageUrl: "https://via.placeholder.com/600x300",
-      title: "Slide 1",
-      description: "Description for Slide 1",
-    },
-    {
-      imageUrl: "https://via.placeholder.com/600x300",
-      title: "Slide 2",
-      description: "Description for Slide 2",
-    },
-    // Add more items as needed
-  ];
+  const shuffled = project_temp.sort(() => 0.5 - Math.random());
+  const [projects, loadUpProjects] = useState(shuffled.slice(0, 3));
 
   const animationProps = useSpring({
     transform: hovered ? "scale(1.2)" : "scale(1)",
@@ -222,9 +210,9 @@ const Projects = () => {
             })}
         </Swiper>
       </Div1>
-      {/* <Link href="/projects">
+      <Link href="/projects">
         <Button>Show All Projects</Button>
-      </Link> */}
+      </Link>
     </Section>
   );
 };

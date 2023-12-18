@@ -5,7 +5,9 @@ export const project_temp = [
     Utilized the latest software development tools, and approaches.\n
     Effectively used the latest React Native techniques like Functional /Class-based components, React Hooks, and Redux to deliver software changes and alterations based on specific design specifications.`,
     links: [
-      "https://apps.apple.com/in/app/stratagem-transform-learning/id1531223165",
+      {
+        ios: "https://apps.apple.com/in/app/stratagem-transform-learning/id1531223165",
+      },
     ],
     stack: ["React Native", "iOS", "Native Module"],
     members: 4,
@@ -33,7 +35,7 @@ export const project_temp = [
   {
     name: "ONDC leads page",
     desc: `Worked as frontend React developer to design and develop responsive modules as per the business requirements`,
-    links: ["https://ondc.nowfloats.com/"],
+    links: [{ web: "https://ondc.nowfloats.com/" }],
     stack: ["React", "Bootstrap", "Responsiveness"],
     members: 1,
     startDate: "Aug 2022",
@@ -45,8 +47,8 @@ export const project_temp = [
   {
     name: "Kitsune boost 360 ",
     desc: "Worked as frontend React & Node backend developer and used strategic initiatives to design and develop user interfaces.",
-    links: ["https://boost.nowfloats.com/"],
-    stack: ["React", "Node", "Mongo"],
+    links: [{ web: "https://boost.nowfloats.com/" }],
+    stack: ["React", "Node", "Mongo", "Cypress", "Jmeter", "git workflow"],
     members: 10,
     startDate: "July 2022",
     endDate: "Nov 2022",
@@ -56,8 +58,10 @@ export const project_temp = [
   },
   {
     name: "NPSS",
-    desc: "Worked as lead React Native developer to design and develop an AI-integrated app to detect and produce remedies for diseased crops powered by ICAR-NPCIM.\n App also supports offline support for multiple online features.\nApp is for NPS to be carried out by central and state plant protection agency as well as farmer. ",
-    links: ["https://play.google.com/store/apps/details?id=com.npss"],
+    desc: "Worked as lead React Native developer to design and develop an AI-integrated app to detect and produce remedies for diseased crops powered by ICAR-NPCIM.\n App also supports offline support for multiple online features.\nApp is for NPS to be carried out by central and state plant protection agency as well as farmer.",
+    links: [
+      { android: "https://play.google.com/store/apps/details?id=com.npss" },
+    ],
     stack: ["React Native", "Redux", "API", "Offline Support"],
     members: 2,
     startDate: "June 2023",
@@ -69,8 +73,8 @@ export const project_temp = [
   {
     name: "Rashtriya Sewa Bharti App",
     desc: "Worked as lead React Native developer to design, develop, code & maintain components to create a scalable and reliable Survey app for  econonmically weaker sections of the society to provide welfare. \n App is only available to the designated volunteers registered on the RSBA portal.",
-    links: ["https://ewaste2023.eprewastecpcb.in/#/"],
-    stack: ["React Native", "Redux", "Offline support", "Survey"],
+    links: [],
+    stack: ["React Native", "Redux", "Offline support", "Firebase"],
     members: 20,
     startDate: "June 2021",
 
@@ -80,14 +84,172 @@ export const project_temp = [
   },
   {
     name: "CPCB E-Waste Management System",
-    desc: "Working as frontend developer to design, develop, code & maintain angular components to create a scalable and reliable system for CPCB, GoI. \nE-Waste Management System is a on-line portal where applicant producers can apply on-line for grant of EPR Authorisation",
-    links: ["https://ewaste2023.eprewastecpcb.in/#/"],
-    stack: ["Angular", "Ngxs", "API"],
+    desc: "Working as frontend developer to design, develop, code & maintain angular components to create a scalable and reliable system for CPCB, GoI. \nE-Waste Management System is a on-line portal where applicant producers can apply on-line for grant of EPR Authorisation.",
+    links: [{ web: "https://ewaste2023.eprewastecpcb.in/#/" }],
+    stack: ["Angular", , "API"],
     members: 2,
     startDate: "Aug 2023",
     endDate: "",
     company: "Zibal",
     image:
       "https://media.licdn.com/dms/image/D4D12AQH8qAabsc0yzg/article-cover_image-shrink_720_1280/0/1678900061951?e=1707955200&v=beta&t=QV--AG6U-BMGT7uiE_0I-pVcF1x4ffUXqGt0-BPIpXA",
+  },
+  {
+    name: "Plebian Deli",
+    desc: "Developed an open online market where buyers and sellers can interact with each other, buy digital art/service (art/needlework/crafts, etc ) / buy tickets to an event, create an event, go through all the events on their calendar, can upvote an enlisted item.\n Facebook like home feeds, users can like / unlike / comment or reply on any feed item, and follow any user. For any pre-paid art services, users can directly ping/message the content provider/art seller to bargain about the price.",
+    links: [
+      { android: "https://play.google.com/store/apps/details?id=com.plebeian" },
+      { ios: "https://apps.apple.com/us/app/plebeian-deli/id1518791980" },
+    ],
+    stack: ["React Native", "GraphQL", "Firebase"],
+    members: 4,
+    startDate: "Jul, 2020",
+    endDate: "Oct, 2021",
+    company: "HeaderLabs",
+    image:
+      "https://play-lh.googleusercontent.com/9phh_On9cDt32Ta1QEEwp0psl5hHdn2F8VTqL1M2p6LxSX0tz4UIiIzImkK_rqsAVA=w5120-h2880-rw",
+  },
+  {
+    name: "ServUp Now",
+    desc: "Developed the consumer platform of the mentioned below project Servup where users can book and pay for any service provider based on their geographical location, from ServUp Pro service providers.",
+    links: [
+      {
+        android: "https://play.google.com/store/apps/details?id=com.servupuser",
+      },
+      { ios: "https://apps.apple.com/us/app/servup-now/id1533218705" },
+    ],
+    stack: ["React Native", "JavaScript", "Firebase", "XCode", "Google APIs"],
+    members: 6,
+    startDate: "Jul 2020",
+    endDate: "Oct 2021",
+    company: "HeaderLabs",
+    image:
+      "https://play-lh.googleusercontent.com/AzTSeIbJE7bR_dvdoxHz81HAe0qrh9ngabGXWQF24pN5HhUUUPRcLxH0-RobZ7FgGgc=w5120-h2880-rw",
+  },
+  {
+    name: "ServUp Pro",
+    desc: "Build the service provider platform where the people with the initiative of going as an entrepreneur and opening individual businesses so that they can provide their skillset as a source of earning such as haircut, needlework, massage, makeup, etc. They can accept/ reject the incoming bookings based on their allotted calendar",
+    links: [
+      {
+        android: "https://play.google.com/store/apps/details?id=com.servuppro",
+      },
+      { ios: "https://apps.apple.com/us/app/servup-pro/id1555397913" },
+    ],
+    stack: ["React Native", "JavaScript", "Firebase", "XCode", "Google APIs"],
+    members: 6,
+    startDate: "Jul 2021",
+    endDate: "Oct 2021",
+    company: "HeaderLabs",
+    image:
+      "https://play-lh.googleusercontent.com/wFA6rEooMI1F7_Fpw-G2qunlfnA4WBYMZTdIPKckndipmyG5s3-jL4noc6p1T3MfjA=w5120-h2880-rw",
+  },
+  {
+    name: "Auggie San",
+    desc: "Build a winery app where users can get details about a variety of wines along with their favourite comedians promoting those wineries. Here the user selects a wine brand, scans the particular image, (the image on the winery) which would toggle an AR experience in which their respective promoter would give a brief about the selected wine details. iOS. The backend is structured by Firebase, the admin panel was developed in NextJS and react-native bridging was used to connect with the native swift code with react native",
+    links: [{ ios: "https://apps.apple.com/us/app/auggie-san/id1511126068" }],
+    stack: [
+      "React Native",
+      "XCode",
+      "Android Studio",
+      "JavaScript",
+      "NextJS",
+      "Firebase",
+      "Swift 5",
+    ],
+    members: 3,
+    startDate: "Sept 2020",
+    endDate: "Nov 2021",
+    company: "HeaderLabs",
+    image:
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/2f/53/33/2f53333a-6df1-8594-99f0-349316f5c4a2/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp",
+  },
+  {
+    name: "Vcepro Dealer Solutions",
+    desc: "Build a platform for users and vehicle dealers to book an appointment with their nearest vehicle dealers/ mechanics and pay and can have peer to peer channel for messaging.",
+    links: [
+      {
+        android:
+          "https://play.google.com/store/apps/details?id=com.vcepro&hl=en_IN&gl=US",
+      },
+      {
+        ios: "https://apps.apple.com/us/app/vcepro-dealer-solutions/id1528127313",
+      },
+    ],
+    stack: ["React Native", "Redux"],
+    members: 3,
+    startDate: "",
+    endDate: "",
+    company: "HeaderLabs",
+    image:
+      "https://play-lh.googleusercontent.com/g5bTDZcs0whfAqdHM0UmTAxgGKwExBLXSRglNLRwlJo3ZicfqZlL9m7M_pb3IOFKPi33=w480-h960-rw",
+  },
+  {
+    name: "Guess My Mission",
+    desc: "Build a guessing game app where users can guess where on the globe, the missionaries would go based on their geographical travel history. If they are correct, they earn points which they can redeem to buy gifts from inbuilt market space. Users also can donate to support their favourite missionaries. Missionaries can host / co-host missionary events.",
+    links: [],
+    stack: [
+      "React Native",
+      "XCode",
+      "Android Studio",
+      "Redux",
+      "JavaScript",
+      "ReactJS",
+      "Firebase",
+    ],
+    members: 2,
+    startDate: "",
+    endDate: "",
+    company: "HeaderLabs",
+    image:
+      "https://play-lh.googleusercontent.com/6DQq-kMWj1Jts3PY0OSMDP4C2qe0rcdmReawRLHfJtUZ2Qz464Y_cDiPxIJoLLEFUA=w5120-h2880-rw",
+  },
+  {
+    name: "HardHats",
+    desc: "A platform for easy hiring of construction workers by registered contractors. The construction company/ contractor creates a job for a particular location, and date span with a list of trade expertise he/she requires and workers with the desired trades, in the nearby area, would get an alert if they are available for work. The worker would apply for the job with his/her resume and the contractor can accept the request or deny it. And if accepted, the worker has to confirm the job first with all payment terms and conditions.",
+    links: [],
+    stack: [
+      "React Native",
+      "Xcode",
+      "Android Studio",
+      "NodeJS",
+      "Firebase",
+      "Redux",
+      "React Hooks",
+      "qr generator",
+    ],
+    members: 2,
+    startDate: "",
+    endDate: "",
+    company: "HeaderLabs",
+    image:
+      "https://cdn.dribbble.com/users/3674349/screenshots/18746970/media/c021c4de5f4a8c8b3ce94b1f20ae590c.gif",
+  },
+  {
+    name: "Twimbit",
+    desc: `Worked as Full stack developer using ReactJS front-end and backend developer with WordPress headless CMS with GraphQL integrated as backend. 
+    Also made the website is PWA-enabled to make the website work in offline connectivity to provide a smoother version of cached website content.
+    The website also provides an audio podcast feature to read to you the content with additional advisories from business experts.
+    `,
+    links: [{ web: "https://twimbit.com/" }],
+    stack: ["ReactJS", "Wordpress CMS", "NodeJS", "GraphQL", "PWA"],
+    members: 3,
+    startDate: "",
+    endDate: "",
+    company: "Twimbit",
+    image:
+      "https://assets-global.website-files.com/613ee3103624f1801ce36753/64d229518073ed7f89e675d5_Group%20427319168.png",
+  },
+  {
+    name: "Twimbit",
+    desc: `Worked as ReactJS and Angular 7 intern developer to develop a Single page web application to rent/sell properties in London with integration of 3rd party APIs.
+    `,
+    links: [{ web: "https://avasa.ai/" }],
+    stack: ["ReactJS", "Wordpress", "Angular 7", "NodeJS", "Google APIs"],
+    members: 10,
+    startDate: "Nov 2019",
+    endDate: "",
+    company: "RSVR Technologies",
+    image:
+      "https://seedrs.imgix.net/uploads/startup/summary/cover_image/27602/a2ohoo3x0xuclj9b6ts448m20ay2pxm/Avasa_Logo_Standard.jpg?bri=0&s=883fe3be5ea82ff19ac961a9f929ea3b",
   },
 ];
